@@ -1,0 +1,23 @@
+{
+  "name": "registro-personal-log",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@11.9.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @registro/contracts build && pnpm --parallel --filter @registro/contracts --filter @registro/api --filter @registro/web dev",
+    "build": "pnpm --filter @registro/contracts build && pnpm --filter @registro/api build && pnpm --filter @registro/web build",
+    "typecheck": "pnpm --filter @registro/contracts build && pnpm -r typecheck",
+    "test": "pnpm -r test",
+    "lint": "biome check .",
+    "format": "biome check --write .",
+    "verify": "pnpm lint && pnpm typecheck && pnpm test && pnpm build"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.4",
+    "typescript": "7.0.2",
+    "vitest": "4.1.10"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.5.4/schema.json",
+  "files": {
+    "includes": [
+      "apps/**",
+      "packages/**",
+      "!!apps/**/dist",
+      "!!packages/**/dist",
+      "package.json",
+      "tsconfig.base.json",
+      "pnpm-workspace.yaml",
+      "biome.json"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "lineWidth": 100
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "preset": "recommended"
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "double",
+      "semicolons": "always"
+    }
+  }
+}

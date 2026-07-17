@@ -57,4 +57,35 @@ La carpeta `site/` contiene la pagina estatica publica del proyecto. El workflow
 
 ## Estado
 
-Fase inicial con contrato de datos definido y primer importador local funcional. Antes de construir la app completa, queda decidir stack de aplicacion, alojamiento, autenticacion y cifrado.
+Fase 0 de la aplicacion en marcha. El repositorio contiene un monorepo TypeScript con:
+
+- `apps/web`: interfaz React creada con Vite;
+- `apps/api`: API HTTP con Hono;
+- `packages/contracts`: contratos compartidos y validados con Zod;
+- el importador Python original como referencia de compatibilidad durante la migracion.
+
+La base de datos, el alojamiento, la autenticacion y el cifrado siguen siendo decisiones separadas.
+
+## Desarrollo de la app
+
+Requisitos:
+
+- Node.js 24 o compatible;
+- pnpm 11.
+
+Instalar dependencias y ejecutar web, API y contratos en modo desarrollo:
+
+```powershell
+pnpm install
+pnpm dev
+```
+
+La web se abre en `http://localhost:5173` y redirige las peticiones `/api` a Hono en `http://localhost:8787`.
+
+En desarrollo, Hono escucha solo en `127.0.0.1` para no exponer la API a la red local. Un despliegue en contenedor debera establecer explicitamente `API_HOST=0.0.0.0`.
+
+Comprobacion completa:
+
+```powershell
+pnpm verify
+```

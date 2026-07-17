@@ -267,3 +267,53 @@ React + TypeScript + Vite (PWA)
 -> SQLite central en primera fase
 -> PostgreSQL si aparecen multiples instancias, concurrencia o necesidades operativas mayores
 ```
+
+## Fase 0 completada 2026-07-18
+
+Se ha creado el cimiento ejecutable de la aplicacion como monorepo pnpm:
+
+```text
+apps/web
+  React 19 + TypeScript 7 + Vite 8
+
+apps/api
+  Hono 4 sobre Node.js
+
+packages/contracts
+  Zod 4 y tipos compartidos
+```
+
+Trabajo realizado:
+
+- configuracion raiz de pnpm, TypeScript y Biome;
+- lockfile reproducible y autorizacion limitada del script nativo de `esbuild`;
+- endpoint `GET /api/health` en Hono;
+- API limitada a `127.0.0.1` en desarrollo para evitar exposicion accidental a la red local;
+- cliente React que valida la respuesta con el contrato compartido;
+- proxy de Vite desde `/api` hacia Hono durante el desarrollo;
+- pruebas de contrato, API y cliente;
+- builds limpios de contratos, API y web;
+- documentacion de arquitectura en `docs/ARCHITECTURE.md`;
+- instrucciones de desarrollo en `README.md`.
+
+Verificacion ejecutada:
+
+```text
+pnpm run verify
+-> Biome: correcto
+-> TypeScript: correcto
+-> Vitest: 5 pruebas correctas
+-> Build API: correcto
+-> Build web: correcto
+```
+
+Tambien se comprobo el flujo en ejecucion:
+
+```text
+GET http://127.0.0.1:5173/ -> 200
+GET http://127.0.0.1:5173/api/health -> status ok
+```
+
+La funcionalidad PWA avanzada se mantiene en su fase posterior; la fase 0 solo prepara la web mobile-first. SQLite continua pendiente de confirmacion y no se ha acoplado almacenamiento al cimiento.
+
+Siguiente fase: portar a TypeScript el contrato completo de entrada y la logica del importador Python, preservando su comportamiento mediante pruebas de compatibilidad.
