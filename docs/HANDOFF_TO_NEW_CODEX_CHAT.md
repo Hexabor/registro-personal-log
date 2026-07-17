@@ -1,5 +1,21 @@
 # Traspaso para nuevo chat de Codex
 
+## Protocolo permanente de trabajo
+
+Cada vez que Codex trabaje en este proyecto debe:
+
+1. Leer este archivo de handoff al empezar o retomar una sesion.
+2. Usarlo como fuente de continuidad del proyecto.
+3. Actualizarlo al terminar cualquier bloque de trabajo relevante.
+4. Dejar anotados:
+   - que se ha hecho;
+   - que queda pendiente;
+   - comandos importantes ya ejecutados o pendientes;
+   - decisiones tomadas;
+   - bloqueos o limitaciones encontradas.
+
+El objetivo es que el usuario no tenga que recordar manualmente el estado del proyecto entre sesiones.
+
 ## Contexto
 
 El usuario quiere crear una app privada de registro/log/diario personal.
@@ -108,3 +124,75 @@ Lee docs/HANDOFF_TO_NEW_CODEX_CHAT.md, docs/PRODUCT_SPEC.md, docs/DATA_MODEL.md,
 4. Inicializar o revisar Git.
 5. Hacer el primer commit cuando el usuario confirme.
 
+## Estado actualizado 2026-07-17
+
+El repo ya fue creado en GitHub:
+
+```text
+https://github.com/Hexabor/registro-personal-log
+```
+
+El commit inicial ya fue subido a `main`:
+
+```text
+5224439 Initial project seed
+```
+
+Despues se preparo GitHub Pages localmente con estos archivos:
+
+```text
+.github/workflows/pages.yml
+site/index.html
+site/styles.css
+site/assets/flow.svg
+```
+
+Tambien se actualizo `README.md` para mencionar la carpeta `site/`.
+
+Codex no pudo hacer `git add`, `commit` ni `push` porque la sesion no tenia permiso de escritura sobre `.git`. El usuario debe ejecutar en su terminal:
+
+```powershell
+cd "D:\1. Proyectos\registro-personal-log"
+
+git add README.md .github/workflows/pages.yml site/index.html site/styles.css site/assets/flow.svg docs/HANDOFF_TO_NEW_CODEX_CHAT.md
+git commit -m "Add GitHub Pages site"
+git push
+```
+
+Luego activar GitHub Pages con workflow si no se activa solo:
+
+```powershell
+gh api -X POST repos/Hexabor/registro-personal-log/pages -f build_type=workflow
+```
+
+Si GitHub responde que Pages ya existe:
+
+```powershell
+gh api -X PUT repos/Hexabor/registro-personal-log/pages -f build_type=workflow
+```
+
+URL esperada:
+
+```text
+https://hexabor.github.io/registro-personal-log/
+```
+
+## Aclaraciones de producto 2026-07-17
+
+- La captura se hara en ChatGPT, mediante dictado o conversacion natural y las instrucciones de `docs/JOURNAL_CHAT_SKILL.md`.
+- La app no debe duplicar inicialmente una interfaz de captura ni integrar IA propia.
+- El traspaso inicial sera: ChatGPT genera un archivo JSONL, el usuario lo abre o selecciona desde la app y la app valida, muestra una vista previa e importa.
+- La app se usara principalmente desde un Pixel 10, por lo que la importacion, consulta, busqueda y revision deben disenarse mobile-first.
+- El usuario lleva unos seis meses creando web apps, algunas complejas, y no ha trabajado antes con Python. Le interesa aprender Python, pero conviene mantener una parte web familiar mientras aprende el backend o mejora el importador.
+- El stack sigue abierto. Una opcion coherente para explorar es frontend web/PWA con TypeScript y backend Python reutilizando el importador existente, sin convertir esta recomendacion en una decision cerrada antes de preparar un pequeno prototipo.
+
+Flujo corregido:
+
+```text
+ChatGPT + instrucciones de captura
+-> archivo JSONL
+-> apertura/seleccion desde la app en el Pixel
+-> validacion y vista previa
+-> importacion idempotente
+-> busqueda, filtros y exportacion
+```
