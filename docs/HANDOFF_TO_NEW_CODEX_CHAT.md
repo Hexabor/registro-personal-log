@@ -18,6 +18,8 @@ antigua que contradiga este checkpoint debe considerarse superada.
 - Al cerrar este checkpoint se debe dejar el arbol de trabajo limpio y `main`
   sincronizada con `origin/main`.
 - No hay cambios de codigo pendientes de commit ni migraciones pendientes de ejecutar.
+- Se han añadido `AGENTS.md`, `CLAUDE.md` y `docs/CLAUDE_CODE_WELCOME.md` para
+  continuar de forma consistente desde Codex, Claude Code o varios equipos.
 
 Para comprobar que se parte del punto correcto:
 
@@ -69,6 +71,20 @@ pero se confirmara antes de la fase que lo introduzca.
 - Stack aprobado: React, TypeScript, Vite, Hono y Zod compartido.
 - La aplicacion sera inicialmente online-first.
 - No se usara Python: la logica necesaria se implementara en TypeScript.
+- La presentacion se separara de la logica mediante tokens semanticos de tema. No se
+  construiran varias skins ahora, pero la arquitectura permitira añadirlas despues
+  sin rehacer componentes ni logica.
+
+### Protocolo de continuidad entre herramientas
+
+- Cualquier agente debe leer primero `AGENTS.md` y este checkpoint.
+- Claude Code debe leer tambien `CLAUDE.md` y
+  `docs/CLAUDE_CODE_WELCOME.md`.
+- El repositorio y su remoto son la fuente de verdad; el contexto privado de un chat
+  no cuenta como documentacion compartida.
+- Cada bloque relevante termina actualizando este checkpoint, ejecutando
+  `pnpm run verify` y publicando el cambio cuando se haya acordado compartirlo.
+- Si trabajan varios agentes simultaneamente, deben usar ramas distintas por tarea.
 
 ## Protocolo permanente de trabajo
 

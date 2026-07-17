@@ -26,7 +26,17 @@ Chat de captura
 ## Estructura
 
 ```text
+AGENTS.md
+CLAUDE.md
+apps/
+  web/
+  api/
+packages/
+  contracts/
 docs/
+  ARCHITECTURE.md
+  CLAUDE_CODE_WELCOME.md
+  HANDOFF_TO_NEW_CODEX_CHAT.md
   JOURNAL_CHAT_SKILL.md
   PRODUCT_SPEC.md
   DATA_MODEL.md
@@ -34,11 +44,22 @@ docs/
 examples/
   sample_import.jsonl
   sample_export.md
-db/
-  schema.sql
-app/
 importer/
+site/
 ```
+
+## Continuidad entre agentes y equipos
+
+El repositorio contiene su propio protocolo para continuar el trabajo desde Codex,
+Claude Code u otro ordenador:
+
+- `AGENTS.md`: reglas comunes de desarrollo y colaboracion;
+- `CLAUDE.md`: instrucciones que Claude Code debe leer al entrar;
+- `docs/CLAUDE_CODE_WELCOME.md`: preparacion completa de un equipo nuevo;
+- `docs/HANDOFF_TO_NEW_CODEX_CHAT.md`: checkpoint exacto y siguiente tarea.
+
+Todo agente debe leer el handoff antes de modificar codigo y actualizarlo al cerrar
+un bloque relevante.
 
 ## Importador local
 
