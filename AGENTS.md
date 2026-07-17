@@ -16,6 +16,8 @@ En cada sesion nueva, antes de proponer o modificar codigo:
 6. Confirmar que la rama local no esta atrasada respecto a `origin/main`. Si lo
    esta, detenerse antes de editar y sincronizar de forma segura.
 7. No repetir trabajo que el handoff marque como terminado.
+8. Explicar al usuario el punto exacto desde el que se va a continuar antes de editar
+   nada.
 
 `docs/CLAUDE_CODE_WELCOME.md` solo es de lectura obligatoria en el primer uso de
 Claude Code en el proyecto, al preparar un equipo nuevo o cuando cambien de forma

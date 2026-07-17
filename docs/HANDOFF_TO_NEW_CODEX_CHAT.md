@@ -13,13 +13,16 @@ antigua que contradiga este checkpoint debe considerarse superada.
 - Repositorio de trabajo: `D:\1. Proyectos\registro-personal-log`.
 - Remoto: `https://github.com/Hexabor/registro-personal-log`.
 - Rama de trabajo acordada: `main`.
-- Ultimo commit funcional antes de este checkpoint: `387e6b1 Build phase zero application foundation`.
-- La fase 0 esta publicada en `origin/main`.
+- Base de codigo de la fase 0 publicada en `origin/main` (commit `387e6b1`).
+- Ultimo bloque publicado: adelgazamiento de `CLAUDE.md` para que remita a
+  `AGENTS.md` como fuente unica del protocolo.
 - Al cerrar este checkpoint se debe dejar el arbol de trabajo limpio y `main`
   sincronizada con `origin/main`.
 - No hay cambios de codigo pendientes de commit ni migraciones pendientes de ejecutar.
-- Se han añadido `AGENTS.md`, `CLAUDE.md` y `docs/CLAUDE_CODE_WELCOME.md` para
-  continuar de forma consistente desde Codex, Claude Code o varios equipos.
+- `AGENTS.md` es la fuente unica de reglas para todos los agentes. `CLAUDE.md` solo
+  redirige a el (Claude Code lo carga automaticamente) y `docs/CLAUDE_CODE_WELCOME.md`
+  es la incorporacion de lectura unica. El inicio obligatorio de `AGENTS.md` incluye
+  ahora explicar al usuario el punto de reanudacion antes de editar (paso 8).
 
 Para comprobar que se parte del punto correcto:
 
