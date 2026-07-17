@@ -51,6 +51,10 @@ python importer/journal_importer.py --db data/journal.sqlite3 import examples/sa
 python importer/journal_importer.py --db data/journal.sqlite3 export --format markdown --output exports/journal.md
 ```
 
+## GitHub Pages
+
+La carpeta `site/` contiene la pagina estatica publica del proyecto. El workflow `.github/workflows/pages.yml` la despliega en GitHub Pages cuando se sube a `main`.
+
 ## Estado
 
 Fase inicial con contrato de datos definido y primer importador local funcional. Antes de construir la app completa, queda decidir stack de aplicacion, alojamiento, autenticacion y cifrado.

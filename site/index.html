@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registro personal log</title>
+    <meta name="description" content="App privada de diario/log personal con captura por chat, importacion JSONL y exportacion abierta.">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="Registro personal log">Registro personal log</a>
+      <nav aria-label="Secciones">
+        <a href="#flujo">Flujo</a>
+        <a href="#mvp">MVP</a>
+        <a href="#docs">Docs</a>
+        <a href="https://github.com/Hexabor/registro-personal-log">GitHub</a>
+      </nav>
+    </header>
+
+    <main id="inicio">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Diario estructurado, privado y exportable</p>
+          <h1>Registro personal log</h1>
+          <p class="lede">
+            Un sistema para dictar eventos, ideas, conversaciones y tareas en lenguaje natural,
+            importarlos como datos limpios y conservar siempre una salida propia.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="https://github.com/Hexabor/registro-personal-log">Ver repositorio</a>
+            <a class="button" href="#docs">Leer contrato de datos</a>
+          </div>
+        </div>
+        <figure class="hero-visual">
+          <img src="assets/flow.svg" alt="Flujo desde chat hasta importador, base de datos y exportacion">
+        </figure>
+      </section>
+
+      <section id="flujo" class="band">
+        <div class="section-heading">
+          <p class="eyebrow">Flujo inicial</p>
+          <h2>Primero importacion fiable, despues app completa</h2>
+        </div>
+        <div class="steps" aria-label="Flujo del producto">
+          <article>
+            <span>1</span>
+            <h3>Captura</h3>
+            <p>El usuario dicta o escribe en un chat con instrucciones de estructuracion.</p>
+          </article>
+          <article>
+            <span>2</span>
+            <h3>JSONL</h3>
+            <p>Cada linea contiene una entrada con id estable, fecha, tipo, tags, personas y hash.</p>
+          </article>
+          <article>
+            <span>3</span>
+            <h3>Validacion</h3>
+            <p>El importador recalcula hashes, evita duplicados y marca conflictos revisables.</p>
+          </article>
+          <article>
+            <span>4</span>
+            <h3>Exportacion</h3>
+            <p>Los registros se pueden sacar como Markdown, CSV, JSON o JSONL.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="mvp" class="split">
+        <div>
+          <p class="eyebrow">Estado actual</p>
+          <h2>Semilla funcional</h2>
+          <p>
+            El repositorio ya contiene especificacion de producto, modelo de datos,
+            formato de importacion y un importador local en Python con SQLite.
+          </p>
+        </div>
+        <ul class="checks">
+          <li>Importador JSONL idempotente</li>
+          <li>Validacion de campos obligatorios</li>
+          <li>Deteccion de conflictos por id</li>
+          <li>Advertencias por posible duplicado</li>
+          <li>Exportacion Markdown, CSV, JSON y JSONL</li>
+        </ul>
+      </section>
+
+      <section id="docs" class="band docs">
+        <div class="section-heading">
+          <p class="eyebrow">Documentacion</p>
+          <h2>Contrato del proyecto</h2>
+        </div>
+        <div class="doc-list">
+          <a href="https://github.com/Hexabor/registro-personal-log/blob/main/docs/PRODUCT_SPEC.md">Especificacion de producto</a>
+          <a href="https://github.com/Hexabor/registro-personal-log/blob/main/docs/DATA_MODEL.md">Modelo de datos</a>
+          <a href="https://github.com/Hexabor/registro-personal-log/blob/main/docs/IMPORT_FORMAT.md">Formato de importacion</a>
+          <a href="https://github.com/Hexabor/registro-personal-log/blob/main/docs/JOURNAL_CHAT_SKILL.md">Skill de captura por chat</a>
+          <a href="https://github.com/Hexabor/registro-personal-log/tree/main/importer">Importador local</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Registro personal log</span>
+      <a href="https://github.com/Hexabor/registro-personal-log">github.com/Hexabor/registro-personal-log</a>
+    </footer>
+  </body>
+</html>
