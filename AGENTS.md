@@ -77,7 +77,11 @@ relevante el entorno, la instalacion o el flujo de colaboracion.
 
 ## Git y trabajo desde varios equipos
 
-- Al empezar en un equipo, traer el estado remoto antes de editar.
+- Al empezar en un equipo, traer el estado remoto antes de editar. Los pasos
+  concretos para arrancar en un ordenador nuevo o distinto (clonar o
+  `git pull --ff-only`, `pnpm install --frozen-lockfile`, `pnpm run verify`) estan
+  en `README.md` y en la seccion `Preparar un equipo nuevo` de
+  `docs/CLAUDE_CODE_WELCOME.md`.
 - Para trabajo individual y secuencial se usa `main`, segun el acuerdo actual.
 - Si dos agentes o equipos van a trabajar a la vez, cada tarea debe usar una rama
   corta propia y unirse despues mediante revision; nunca deben editar
