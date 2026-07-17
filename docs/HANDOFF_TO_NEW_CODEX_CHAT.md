@@ -1,5 +1,75 @@
 # Traspaso para nuevo chat de Codex
 
+## CHECKPOINT ACTUAL — reanudar desde aqui
+
+Fecha del checkpoint: `2026-07-18`.
+
+Este bloque es la fuente de verdad para la proxima sesion. Las secciones posteriores
+conservan el razonamiento y la historia del proyecto, pero cualquier instruccion
+antigua que contradiga este checkpoint debe considerarse superada.
+
+### Estado de Git y publicacion
+
+- Repositorio de trabajo: `D:\1. Proyectos\registro-personal-log`.
+- Remoto: `https://github.com/Hexabor/registro-personal-log`.
+- Rama de trabajo acordada: `main`.
+- Ultimo commit funcional antes de este checkpoint: `387e6b1 Build phase zero application foundation`.
+- La fase 0 esta publicada en `origin/main`.
+- Al cerrar este checkpoint se debe dejar el arbol de trabajo limpio y `main`
+  sincronizada con `origin/main`.
+- No hay cambios de codigo pendientes de commit ni migraciones pendientes de ejecutar.
+
+Para comprobar que se parte del punto correcto:
+
+```powershell
+git status -sb
+git log -3 --oneline --decorate
+pnpm run verify
+```
+
+El estado esperado es `main...origin/main` sin archivos modificados. La verificacion
+debe completar formato, tipos, 5 pruebas y los builds de contratos, API y web.
+
+### Punto exacto del desarrollo
+
+- Fase 0: cerrada.
+- Existe un monorepo pnpm ejecutable con React + TypeScript + Vite, Hono sobre
+  Node.js y contratos Zod compartidos.
+- La API solo contiene el endpoint de infraestructura `GET /api/health`.
+- La web solo contiene la pantalla minima que comprueba dicho endpoint.
+- Todavia no existe base de datos, autenticacion, PWA instalable ni flujo real de
+  importacion.
+- La API escucha en `127.0.0.1` durante el desarrollo. No hay que volver a exponer
+  Node a la red privada o publica para trabajar en local.
+
+### Proxima tarea: comenzar la fase 1
+
+El siguiente bloque de trabajo es el nucleo de importacion, en este orden:
+
+1. Revisar `docs/DATA_MODEL.md`, `docs/IMPORT_FORMAT.md`,
+   `docs/JOURNAL_CHAT_SKILL.md` y los ejemplos existentes.
+2. Convertir el formato completo de entrada en esquemas Zod y tipos TypeScript
+   dentro de `packages/contracts`.
+3. Crear casos de prueba validos, invalidos y de compatibilidad a partir del JSONL
+   de ejemplo.
+4. Portar a TypeScript la validacion y normalizacion del importador, sin interfaz
+   de usuario ni persistencia todavia.
+5. Ejecutar `pnpm run verify`, actualizar este handoff y publicar el bloque.
+
+No se debe empezar todavia por SQLite, autenticacion, despliegue, modo offline ni
+busqueda semantica. SQLite central sigue siendo la propuesta para la persistencia,
+pero se confirmara antes de la fase que lo introduzca.
+
+### Decisiones ya cerradas
+
+- El usuario actua como product owner y Codex como equipo de desarrollo.
+- La captura ocurre en ChatGPT; la app recibe el archivo JSONL resultante.
+- La app sera mobile-first y se usara principalmente desde un Pixel 10, pero Pixel
+  y ordenador consultaran los mismos datos centrales.
+- Stack aprobado: React, TypeScript, Vite, Hono y Zod compartido.
+- La aplicacion sera inicialmente online-first.
+- No se usara Python: la logica necesaria se implementara en TypeScript.
+
 ## Protocolo permanente de trabajo
 
 Cada vez que Codex trabaje en este proyecto debe:
