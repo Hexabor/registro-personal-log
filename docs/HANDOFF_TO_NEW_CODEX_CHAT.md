@@ -77,23 +77,28 @@ pero se confirmara antes de la fase que lo introduzca.
 
 ### Protocolo de continuidad entre herramientas
 
-- Cualquier agente debe leer primero `AGENTS.md` y este checkpoint.
-- Claude Code debe leer tambien `CLAUDE.md` y
-  `docs/CLAUDE_CODE_WELCOME.md`.
+- Al principio y al final de cada sesion, cualquier agente debe revisar `AGENTS.md`,
+  sus instrucciones especificas y este checkpoint, manteniendolos actualizados.
+- Claude Code debe revisar `CLAUDE.md` en cada sesion.
+- `docs/CLAUDE_CODE_WELCOME.md` solo es de lectura obligatoria la primera vez, al
+  preparar otro equipo o cuando cambien el entorno o el protocolo.
 - El repositorio y su remoto son la fuente de verdad; el contexto privado de un chat
   no cuenta como documentacion compartida.
-- Cada bloque relevante termina actualizando este checkpoint, ejecutando
-  `pnpm run verify` y publicando el cambio cuando se haya acordado compartirlo.
+- Cada sesion termina dejando este checkpoint exacto, incluso si el trabajo quedo a
+  medias, ejecutando `pnpm run verify` y publicando el cambio cuando se haya acordado
+  compartirlo. Si nada material cambio, no se crea un commit vacio.
 - Si trabajan varios agentes simultaneamente, deben usar ramas distintas por tarea.
 
 ## Protocolo permanente de trabajo
 
-Cada vez que Codex trabaje en este proyecto debe:
+Al principio y al final de cada sesion, Codex debe:
 
-1. Leer este archivo de handoff al empezar o retomar una sesion.
-2. Usarlo como fuente de continuidad del proyecto.
-3. Actualizarlo al terminar cualquier bloque de trabajo relevante.
-4. Dejar anotados:
+1. Revisar `AGENTS.md`, sus instrucciones activas y este archivo.
+2. Usar el checkpoint como fuente de continuidad del proyecto.
+3. Comprobar que las reglas y el checkpoint coinciden con el estado real.
+4. Al terminar, actualizar el checkpoint si hubo cualquier cambio material, incluso
+   cuando el trabajo haya quedado a medias.
+5. Dejar anotados:
    - que se ha hecho;
    - que queda pendiente;
    - comandos importantes ya ejecutados o pendientes;

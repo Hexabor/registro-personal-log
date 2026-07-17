@@ -3,16 +3,23 @@
 Este archivo se aplica a todo el repositorio y es la referencia comun para Codex,
 Claude Code y cualquier otro agente de desarrollo.
 
-## Arranque obligatorio
+## Inicio obligatorio de cada sesion
 
-Antes de proponer o modificar codigo:
+En cada sesion nueva, antes de proponer o modificar codigo:
 
-1. Leer `docs/HANDOFF_TO_NEW_CODEX_CHAT.md`, empezando por `CHECKPOINT ACTUAL`.
-2. Leer `README.md` y los documentos que el checkpoint indique para la tarea.
-3. Ejecutar `git status -sb` y `git log -3 --oneline --decorate`.
-4. Confirmar que la rama local no esta atrasada respecto a `origin/main`. Si lo
+1. Leer `AGENTS.md` y las instrucciones especificas del agente, como `CLAUDE.md`.
+2. Leer `docs/HANDOFF_TO_NEW_CODEX_CHAT.md`, empezando por `CHECKPOINT ACTUAL`.
+3. Revisar que esas reglas y el checkpoint siguen siendo coherentes con el estado
+   real del repositorio. Corregirlos si se detecta informacion obsoleta.
+4. Leer `README.md` y los documentos que el checkpoint indique para la tarea.
+5. Ejecutar `git status -sb` y `git log -3 --oneline --decorate`.
+6. Confirmar que la rama local no esta atrasada respecto a `origin/main`. Si lo
    esta, detenerse antes de editar y sincronizar de forma segura.
-5. No repetir trabajo que el handoff marque como terminado.
+7. No repetir trabajo que el handoff marque como terminado.
+
+`docs/CLAUDE_CODE_WELCOME.md` solo es de lectura obligatoria en el primer uso de
+Claude Code en el proyecto, al preparar un equipo nuevo o cuando cambien de forma
+relevante el entorno, la instalacion o el flujo de colaboracion.
 
 ## Fuente de verdad
 
@@ -77,20 +84,24 @@ Antes de proponer o modificar codigo:
   un bloque aprobado para que el trabajo no dependa de un solo ordenador.
 - No confirmar ni subir cambios no relacionados sin revisarlos expresamente.
 
-## Cierre obligatorio de cada bloque
+## Cierre obligatorio de cada sesion
 
-Antes de dar el trabajo por terminado:
+Antes de terminar cualquier sesion, incluso si el bloque previsto quedo a medias:
 
-1. Actualizar la seccion `CHECKPOINT ACTUAL` de
+1. Volver a revisar `AGENTS.md`, las instrucciones especificas del agente y la
+   seccion `CHECKPOINT ACTUAL` para asegurar que siguen reflejando el modo real de
+   trabajo.
+2. Actualizar la seccion `CHECKPOINT ACTUAL` de
    `docs/HANDOFF_TO_NEW_CODEX_CHAT.md` con lo realizado, lo pendiente, decisiones,
-   bloqueos, pruebas y siguiente tarea exacta.
-2. Actualizar tambien README, arquitectura o especificaciones si dejaron de ser
+   bloqueos, pruebas y siguiente tarea exacta. Si no hubo cambios materiales, no es
+   necesario crear un commit vacio: basta con comprobar que el checkpoint sigue
+   siendo exacto.
+3. Actualizar tambien README, arquitectura o especificaciones si dejaron de ser
    exactos.
-3. Ejecutar `pnpm run verify` y registrar cualquier comprobacion que no pueda
+4. Ejecutar `pnpm run verify` y registrar cualquier comprobacion que no pueda
    completarse.
-4. Revisar el diff y comprobar que no contiene secretos ni cambios ajenos.
-5. Hacer commit y push cuando el usuario haya pedido publicar o el bloque de trabajo
+5. Revisar el diff y comprobar que no contiene secretos ni cambios ajenos.
+6. Hacer commit y push cuando el usuario haya pedido publicar o el bloque de trabajo
    se haya acordado como compartido.
-6. Confirmar al usuario la rama, el commit publicado, las pruebas y el punto de
+7. Confirmar al usuario la rama, el commit publicado, las pruebas y el punto de
    reanudacion.
-

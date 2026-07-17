@@ -3,6 +3,11 @@
 Esta guia permite abrir el proyecto en un equipo nuevo y continuar sin depender del
 historial de otro chat.
 
+Es un documento de incorporacion: debe leerse completo la primera vez que Claude
+Code trabaje en el proyecto, al preparar un equipo nuevo o cuando cambien la
+instalacion o el protocolo. En las sesiones normales bastara con revisar
+`../AGENTS.md`, `../CLAUDE.md` y el checkpoint actual.
+
 ## Enlaces del proyecto
 
 - Repositorio: <https://github.com/Hexabor/registro-personal-log>
@@ -96,9 +101,9 @@ site                     Pagina informativa publica de GitHub Pages
 
 ## Flujo de colaboracion
 
-### Antes de trabajar
+### Al inicio de cada sesion
 
-1. Leer el checkpoint y las reglas.
+1. Leer y revisar `AGENTS.md`, `CLAUDE.md` y el checkpoint.
 2. Comprobar Git y sincronizar mediante avance directo (`--ff-only`).
 3. Confirmar que se entiende la siguiente tarea y no abrir fases posteriores.
 4. Si habra varios agentes a la vez, crear una rama separada por tarea.
@@ -112,11 +117,12 @@ site                     Pagina informativa publica de GitHub Pages
 - Usar tokens visuales semanticos y mantener la logica separada del aspecto para
   que futuras skins sean baratas de incorporar.
 
-### Al terminar
+### Al final de cada sesion
 
 1. Ejecutar `pnpm run verify`.
 2. Revisar `git diff` y `git status`.
-3. Actualizar el checkpoint con el estado exacto y la proxima tarea.
+3. Volver a revisar las reglas y actualizar el checkpoint con el estado exacto y la
+   proxima tarea, incluso si el trabajo quedo a medias.
 4. Hacer un commit descriptivo y subirlo cuando corresponda.
 5. Indicar al usuario commit, rama, pruebas y cualquier pendiente.
 
@@ -137,4 +143,3 @@ Respeta el protocolo de cierre y actualiza el handoff al terminar.
 - No exponer la API de desarrollo a la red local.
 - Detenerse y consultar al usuario antes de cualquier decision que cambie el modelo
   de privacidad, alojamiento, autenticacion, cifrado o copias de seguridad.
-

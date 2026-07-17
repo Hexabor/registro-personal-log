@@ -58,8 +58,9 @@ Claude Code u otro ordenador:
 - `docs/CLAUDE_CODE_WELCOME.md`: preparacion completa de un equipo nuevo;
 - `docs/HANDOFF_TO_NEW_CODEX_CHAT.md`: checkpoint exacto y siguiente tarea.
 
-Todo agente debe leer el handoff antes de modificar codigo y actualizarlo al cerrar
-un bloque relevante.
+Todo agente debe revisar sus reglas y el handoff al principio y al final de cada
+sesion. La guia de bienvenida solo es obligatoria al estrenar Claude Code, preparar
+otro equipo o cambiar de forma relevante el entorno de trabajo.
 
 ## Importador local
 
