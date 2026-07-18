@@ -4,6 +4,29 @@ App privada para capturar, importar, consultar y exportar registros personales e
 
 El proyecto nace con una idea central: poder dictar entradas en un chat de IA, convertirlas en registros compatibles y guardarlas en una base de datos segura, versatil y exportable.
 
+## Empezar en un ordenador nuevo
+
+En un equipo donde el repositorio todavia no existe, lo unico que necesitas llevar
+contigo es la URL de este repo: GitHub muestra este README en la web sin clonar nada,
+y desde aqui obtienes todo lo demas. Con Git, Node.js 24 y pnpm 11 instalados:
+
+```powershell
+git clone https://github.com/Hexabor/registro-personal-log.git
+cd registro-personal-log
+pnpm install --frozen-lockfile
+pnpm verify
+```
+
+Despues abre Claude Code o Codex en la carpeta y pideles arrancar:
+
+```text
+Lee AGENTS.md y sigue el inicio obligatorio.
+```
+
+A partir de ahi el protocolo completo vive en el repo: `AGENTS.md` (reglas),
+`docs/HANDOFF_TO_NEW_CODEX_CHAT.md` (checkpoint) y, para la puesta a punto detallada
+de un equipo, `docs/CLAUDE_CODE_WELCOME.md`.
+
 ## Objetivos
 
 - Capturar eventos, ideas, conversaciones, decisiones, tareas, reflexiones y observaciones diarias.
