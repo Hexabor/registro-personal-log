@@ -31,6 +31,10 @@ Despues abre Claude Code o Codex en la carpeta y pideles arrancar:
 Lee AGENTS.md y sigue el inicio obligatorio.
 ```
 
+Como alternativa portable, puedes adjuntar o inyectar `RESUME_PROJECT.md` en
+cualquier agente. Ese archivo le indica como reconstruir el contexto desde Git y el
+checkpoint sin depender de un chat anterior.
+
 A partir de ahi el protocolo completo vive en el repo: `AGENTS.md` (reglas),
 `docs/HANDOFF_TO_NEW_CODEX_CHAT.md` (checkpoint) y, para la puesta a punto detallada
 de un equipo, `docs/CLAUDE_CODE_WELCOME.md`.
@@ -59,6 +63,7 @@ Chat de captura
 ```text
 AGENTS.md
 CLAUDE.md
+RESUME_PROJECT.md
 apps/
   web/
   api/
@@ -86,6 +91,7 @@ Claude Code u otro ordenador:
 
 - `AGENTS.md`: reglas comunes de desarrollo y colaboracion;
 - `CLAUDE.md`: instrucciones que Claude Code debe leer al entrar;
+- `RESUME_PROJECT.md`: contexto de arranque portable para cualquier agente;
 - `docs/CLAUDE_CODE_WELCOME.md`: preparacion completa de un equipo nuevo;
 - `docs/HANDOFF_TO_NEW_CODEX_CHAT.md`: checkpoint exacto y siguiente tarea.
 

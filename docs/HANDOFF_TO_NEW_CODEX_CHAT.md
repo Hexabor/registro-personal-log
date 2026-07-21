@@ -17,7 +17,8 @@ antigua que contradiga este checkpoint debe considerarse superada.
 - Ultimo bloque publicado: consolidacion de documentacion de continuidad
   (`CLAUDE.md` remite a `AGENTS.md`; `AGENTS.md` apunta a los pasos multi-equipo;
   `README.md` gana un arranque en frio para PC nuevo y el importador Python queda
-  descrito como referencia, no como componente; la configuracion local de Claude
+  descrito como referencia, no como componente; `RESUME_PROJECT.md` permite
+  reconstruir el contexto con cualquier agente; la configuracion local de Claude
   queda excluida de Git).
 - El repositorio queda preparado para retomarse desde otro ordenador siguiendo la
   seccion `Empezar en un ordenador nuevo` de `README.md`.
