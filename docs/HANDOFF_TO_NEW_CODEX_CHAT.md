@@ -2,7 +2,7 @@
 
 ## CHECKPOINT ACTUAL — reanudar desde aqui
 
-Fecha del checkpoint: `2026-07-18`.
+Fecha del checkpoint: `2026-07-21`.
 
 Este bloque es la fuente de verdad para la proxima sesion. Las secciones posteriores
 conservan el razonamiento y la historia del proyecto, pero cualquier instruccion
@@ -14,8 +14,13 @@ antigua que contradiga este checkpoint debe considerarse superada.
 - Remoto: `https://github.com/Hexabor/registro-personal-log`.
 - Rama de trabajo acordada: `main`.
 - Base de codigo de la fase 0 publicada en `origin/main` (commit `387e6b1`).
-- Ultimo bloque publicado: adelgazamiento de `CLAUDE.md` para que remita a
-  `AGENTS.md` como fuente unica del protocolo.
+- Ultimo bloque publicado: consolidacion de documentacion de continuidad
+  (`CLAUDE.md` remite a `AGENTS.md`; `AGENTS.md` apunta a los pasos multi-equipo;
+  `README.md` gana un arranque en frio para PC nuevo y el importador Python queda
+  descrito como referencia, no como componente; la configuracion local de Claude
+  queda excluida de Git).
+- El repositorio queda preparado para retomarse desde otro ordenador siguiendo la
+  seccion `Empezar en un ordenador nuevo` de `README.md`.
 - Al cerrar este checkpoint se debe dejar el arbol de trabajo limpio y `main`
   sincronizada con `origin/main`.
 - No hay cambios de codigo pendientes de commit ni migraciones pendientes de ejecutar.
@@ -34,6 +39,7 @@ pnpm run verify
 
 El estado esperado es `main...origin/main` sin archivos modificados. La verificacion
 debe completar formato, tipos, 5 pruebas y los builds de contratos, API y web.
+La ultima verificacion completa se ejecuto correctamente el `2026-07-21`.
 
 ### Punto exacto del desarrollo
 

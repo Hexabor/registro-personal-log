@@ -17,6 +17,14 @@ pnpm install --frozen-lockfile
 pnpm verify
 ```
 
+Si el repositorio ya existe en ese equipo no lo clones: entra en la carpeta y
+sincroniza antes de trabajar. Los agentes ya hacen esto en su inicio obligatorio.
+
+```powershell
+git pull --ff-only origin main
+pnpm install --frozen-lockfile
+```
+
 Despues abre Claude Code o Codex en la carpeta y pideles arrancar:
 
 ```text
@@ -85,9 +93,13 @@ Todo agente debe revisar sus reglas y el handoff al principio y al final de cada
 sesion. La guia de bienvenida solo es obligatoria al estrenar Claude Code, preparar
 otro equipo o cambiar de forma relevante el entorno de trabajo.
 
-## Importador local
+## Importador Python de referencia
 
-El primer componente funcional esta en `importer/`. Permite importar JSONL compatible, guardar en SQLite y exportar a Markdown, CSV, JSON o JSONL.
+En `importer/` hay un importador Python heredado que sirve solo como referencia de
+compatibilidad durante la migracion; no es un componente de la aplicacion. La logica
+real se reescribe en TypeScript dentro de `apps/api` y `packages/contracts` (fase 1).
+El importador de referencia permite importar JSONL compatible, guardar en SQLite y
+exportar a Markdown, CSV, JSON o JSONL.
 
 Ejemplo:
 
